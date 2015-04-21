@@ -12,7 +12,7 @@ func main() {
 	conn.UseTLS = true
 	conn.Connect("irc.swehack.org:6697")
 	conn.AddCallback("001", func(e *irc.Event) {
-		conn.Join("#test1")
+		conn.Join("#swehack")
 	})
 
 	conn.AddCallback("PRIVMSG", func(e *irc.Event) {
