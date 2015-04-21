@@ -32,7 +32,7 @@ func httpGetBody(httpClient *http.Client, url string) (body string, err error) {
 		return "", err
 	}
 	defer resp.Body.Close()
-	bodyb, err := ioutil.ReadAll(resp.Body)
+	bodyb, err := ioutil.ReadAll(io.LimitReader(resp.Body, 1<<18))
 	if err != nil {
 		return "", err
 	}
