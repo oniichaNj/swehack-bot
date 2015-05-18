@@ -50,7 +50,9 @@ func main() {
 				return
 			}
 
-			i.Privmsg(CHAN, "[Title] "+title)
+			if title != "Attention Required! | CloudFlare" {
+				i.Privmsg(CHAN, "[Title] "+title)
+			}
 			return
 		}
 		if event.Message() == ".inflik" {
