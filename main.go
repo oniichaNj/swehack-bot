@@ -41,7 +41,7 @@ func main() {
 			return
 		}
 
-		urlreg := regexp.MustCompile("(https?:\\/\\/)([a-z\\-0-9\\._]+\\.[a-z]{2,3}[a-z0-9%\\-\\._?#&\\/=]*)")
+		urlreg := regexp.MustCompile("(?i)(https?:\\/\\/)([a-z\\-0-9\\._]+\\.[a-z]{2,3}[a-z0-9%\\-\\._?#&\\/=]*)")
 		urlMatch := urlreg.FindStringSubmatch(event.Message())
 		if len(urlMatch) != 0 {
 			clientPtr := prepareProxyClient()
